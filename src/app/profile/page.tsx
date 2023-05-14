@@ -9,9 +9,9 @@ const page = (props: Props) => {
         <h2 className="text-4xl">My Profile</h2>
         <div className="flex flex-col gap-2">
           <h3>Name: Matthew Pryor</h3>
-          <h3>Boat: Red Stripe</h3>
+          <h3>Boat: The Gilded Lady</h3>
           <h3>Races Won: 3</h3>
-          <h3>Ambassador: False</h3>
+          <h3>Ambassador: True</h3>
         </div>
       </div>
     </section>
