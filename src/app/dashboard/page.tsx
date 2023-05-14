@@ -9,7 +9,7 @@ const page = (props: Props) => {
     "Directors List",
     "Work Hours",
     "Clubhouse Booking",
-    "How To Info",
+    "How-To Info",
     "Meeting Notes",
     "CYC Emails",
     "Photo Archive",
