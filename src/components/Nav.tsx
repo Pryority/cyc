@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import cycLogo from "../assets/images/CYC-Logo.svg";
+import Image from "next/image";
 
 type Props = {};
 
@@ -27,68 +29,75 @@ const Nav = (props: Props) => {
   return (
     <nav className="flex justify-end items-center w-full mb-16 p-4 bg-sky-50/50 border-b">
       {/* Desktop Navigation */}
-      <div className="sm:flex hidden sm:justify-between w-full items-center">
-        <h1>Collingwood Yacht Club</h1>
-        <div className="flex flex-center gap-2">
-          {!isLoggedIn && (
-            <button
-              className="bg-cyan-50 border border-blue-300 p-2 px-4 rounded-xl text-cyan-900"
-              onClick={() => signIn()}
-            >
-              Login
-            </button>
-          )}
-          <Link
-            href={"/"}
-            className="bg-cyan-50 border border-blue-300 p-2 px-4 rounded-xl text-cyan-900"
-          >
-            Home
-          </Link>
-          {isLoggedIn ? (
-            <>
-              <Link
-                href={"/dashboard"}
-                className="bg-cyan-50 border border-blue-300 p-2 px-4 rounded-xl text-cyan-900"
-              >
-                Dashboard
-              </Link>
-
-              <Link
-                href={"/profile"}
-                className="bg-cyan-50 border border-blue-300 p-2 px-4 rounded-xl text-cyan-900"
-              >
-                My Profile
-              </Link>
-
+      <div className="sm:grid sm:grid-cols-4 hidden w-full items-center">
+        <div className="object-cover sm:col-span-1 col-span-2">
+          <Image src={cycLogo} alt="" />
+        </div>
+        <div className="col-span-2 sm:col-span-3">
+          <div className="flex justify-end gap-2">
+            {!isLoggedIn && (
               <button
-                type="button"
-                onClick={() => signOut()}
-                className="bg-cyan-200 border border-blue-300 p-2 px-4 rounded-3xl text-cyan-900"
+                className="bg-cyan-50 border border-blue-300 p-2 px-4 rounded-xl text-cyan-900"
+                onClick={() => signIn()}
               >
-                Sign Out
+                Login
               </button>
-            </>
-          ) : (
-            <>
-              {providers &&
-                // TODO: Update provider type
-                Object.values(providers).map((provider: any) => (
-                  <button
-                    type="button"
-                    key={provider.name}
-                    onClick={() => signIn(provider.id)}
-                    className="bg-cyan-200 border border-blue-300 p-2 px-4 rounded-3xl text-cyan-900"
-                  >
-                    Sign In
-                  </button>
-                ))}
-            </>
-          )}
+            )}
+            <Link
+              href={"/"}
+              className="bg-cyan-50 border border-blue-300 p-2 px-4 rounded-xl text-cyan-900"
+            >
+              Home
+            </Link>
+            {isLoggedIn ? (
+              <>
+                <Link
+                  href={"/dashboard"}
+                  className="bg-cyan-50 border border-blue-300 p-2 px-4 rounded-xl text-cyan-900"
+                >
+                  Dashboard
+                </Link>
+
+                <Link
+                  href={"/profile"}
+                  className="bg-cyan-50 border border-blue-300 p-2 px-4 rounded-xl text-cyan-900"
+                >
+                  My Profile
+                </Link>
+
+                <button
+                  type="button"
+                  onClick={() => signOut()}
+                  className="bg-cyan-200 border border-blue-300 p-2 px-4 rounded-3xl text-cyan-900"
+                >
+                  Sign Out
+                </button>
+              </>
+            ) : (
+              <>
+                {providers &&
+                  // TODO: Update provider type
+                  Object.values(providers).map((provider: any) => (
+                    <button
+                      type="button"
+                      key={provider.name}
+                      onClick={() => signIn(provider.id)}
+                      className="bg-cyan-200 border border-blue-300 p-2 px-4 rounded-3xl text-cyan-900"
+                    >
+                      Sign In
+                    </button>
+                  ))}
+              </>
+            )}
+          </div>
         </div>
       </div>
 
       {/* Mobile Navigation */}
       <div className="sm:hidden flex w-full justify-end relative">
+        <div className="object-cover">
+          <Image src={cycLogo} alt="" className="" />
+        </div>
         {isLoggedIn ? (
           <div className="flex flex-col items-end w-full justify-end">
             <div
