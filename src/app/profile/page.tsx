@@ -5,7 +5,7 @@ import React from "react";
 
 type Props = {};
 
-const page = async (props: Props) => {
+const ProfilePage = async (props: Props) => {
   const session = await getServerSession(authOptions);
   console.log(session);
   return (
@@ -40,4 +40,4 @@ const page = async (props: Props) => {
   );
 };
 
-export default page;
+export default ProfilePage;

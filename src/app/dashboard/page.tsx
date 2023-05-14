@@ -23,7 +23,11 @@ const page = (props: Props) => {
 
         <div className="grid w-full h-full gap-2 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5">
           {data.map((name) => (
-            <DashboardCard key={name} name={name} />
+            <DashboardCard
+              key={name}
+              name={name}
+              link={name.toLowerCase().replace(/\s/g, "-")}
+            />
           ))}
         </div>
       </div>
