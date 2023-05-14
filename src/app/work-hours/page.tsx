@@ -4,7 +4,9 @@ const WorkHoursPage = () => {
   return (
     <section className="flex flex-col items-center">
       <div className="w-4/5">
-        <h2 className="text-4xl tracking-tighter">Work Hours</h2>
+        <div className="border-b-2 border-gray-300 py-2 mb-4">
+          <h2 className="text-4xl tracking-tighter">Work Hours</h2>
+        </div>
         <div className="flex flex-col gap-4 my-8">
           <p className="text-lg">
             CYC Members and Annual Associates are required to complete 10

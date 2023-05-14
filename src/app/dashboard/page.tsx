@@ -18,8 +18,10 @@ const page = (props: Props) => {
   ];
   return (
     <section className="flex flex-col w-full items-center">
-      <div className="flex flex-col gap-4 w-4/5 items-start">
-        <h2 className="text-4xl tracking-tighter">Member Dashboard</h2>
+      <div className="flex flex-col gap-4 w-4/5">
+        <div className="border-b-2 border-gray-300 py-2 mb-2">
+          <h2 className="text-4xl tracking-tighter">Member Dashboard</h2>
+        </div>
 
         <div className="grid w-full h-full gap-2 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5">
           {data.map((name) => (

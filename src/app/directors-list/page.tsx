@@ -23,8 +23,10 @@ const page = (props: Props) => {
 
   return (
     <section className="flex flex-col w-full items-center">
-      <div className="flex flex-col gap-4 w-4/5 items-start">
-        <h2 className="text-4xl tracking-tighter">CYC Directors List</h2>
+      <div className="flex flex-col gap-4 w-4/5">
+        <div className="border-b-2 border-gray-300 py-2 mb-8">
+          <h2 className="text-4xl tracking-tighter">Directors List</h2>
+        </div>
         <div className="flex gap-2 items-center">
           <h5 className="uppercase">For members use only</h5>
           <h6>Refer to CYC registry for contact info</h6>

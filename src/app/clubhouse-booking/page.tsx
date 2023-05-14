@@ -4,66 +4,71 @@ const ClubhouseBookingPage = () => {
   return (
     <section className="flex flex-col w-full items-center">
       <div className="flex flex-col w-4/5 gap-4">
-        {/* <div className="flex w-full"> */}
-        <h2 className="text-4xl tracking-tighter">Clubhouse Booking</h2>
-        {/* </div> */}
+        <div className="border-b-2 border-gray-300 py-2 mb-4">
+          <h2 className="text-4xl tracking-tighter">Clubhouse Booking</h2>
+        </div>
 
-        <div className="bg-gradient-to-bl from-stone-50 via-blue-50/50 to-stone-100 rounded-lg px-6 py-4 mb-6 border border-stone-200/60">
+        <div className="px-6 py-4 mb-6">
           <p className="text-red-500 font-light tracking-wider mb-4 uppercase">
             Selling liquor at any event requires a liquor permit.
           </p>
 
-          <p className="mb-4 text-2xl font-medium">Rentals</p>
-          <p className="mb-4">
-            The clubhouse and its facilities are available to all members and
-            visiting overnight boaters.
-          </p>
-          <table className="table-auto mb-4">
-            <thead>
-              <tr>
-                <th className="px-4 py-2 font-normal"></th>
-                <th className="px-4 py-2 font-normal">Number of People</th>
-                <th className="px-4 py-2 font-normal">Fee</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className="font-light tracking-tight border px-4 py-2">
-                  Monthly meetings not using kitchen facilities
-                </td>
-                <td className="border px-4 py-2">-</td>
-                <td className="border px-4 py-2">$20</td>
-              </tr>
-              <tr>
-                <td className="font-light tracking-tight border px-4 py-2">
-                  Social events (&lt; 20 people)
-                </td>
-                <td className="border px-4 py-2">&lt; 20</td>
-                <td className="border px-4 py-2">$50</td>
-              </tr>
-              <tr>
-                <td className="font-light tracking-tight border px-4 py-2">
-                  Social events (&gt;20 &lt;50 people)
-                </td>
-                <td className="border px-4 py-2">&gt; 20 &lt; 50</td>
-                <td className="border px-4 py-2">$75</td>
-              </tr>
-              <tr>
-                <td className="font-light tracking-tight border px-4 py-2">
-                  Social events (&gt;50 &lt;85 people max)
-                </td>
-                <td className="border px-4 py-2">&gt; 50 &lt; 85</td>
-                <td className="border px-4 py-2">$100</td>
-              </tr>
-              <tr>
-                <td className="font-light tracking-tight border px-4 py-2">
-                  Events including only CYC members:
-                </td>
-                <td className="border px-4 py-2">-</td>
-                <td className="border px-4 py-2">$0</td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="flex flex-col w-full items-center">
+            <p className="mb-4 text-2xl font-medium">Rentals</p>
+            <p className="mb-4">
+              The clubhouse and its facilities are available to all members and
+              visiting overnight boaters.
+            </p>
+
+            <div className="p-2 border w-fit rounded bg-stone-50/20">
+              <table className="table-auto mb-4">
+                <thead>
+                  <tr>
+                    <th className="px-4 py-2 font-normal"></th>
+                    <th className="px-4 py-2 font-normal">Number of People</th>
+                    <th className="px-4 py-2 font-normal">Fee</th>
+                  </tr>
+                </thead>
+                <tbody className="bg-slate-50">
+                  <tr>
+                    <td className="font-light tracking-tight border px-4 py-2">
+                      Monthly meetings not using kitchen facilities
+                    </td>
+                    <td className="border px-4 py-2">-</td>
+                    <td className="border px-4 py-2">$20</td>
+                  </tr>
+                  <tr>
+                    <td className="font-light tracking-tight border px-4 py-2">
+                      Social events (&lt; 20 people)
+                    </td>
+                    <td className="border px-4 py-2">&lt; 20</td>
+                    <td className="border px-4 py-2">$50</td>
+                  </tr>
+                  <tr>
+                    <td className="font-light tracking-tight border px-4 py-2">
+                      Social events (&gt;20 &lt;50 people)
+                    </td>
+                    <td className="border px-4 py-2">&gt; 20 &lt; 50</td>
+                    <td className="border px-4 py-2">$75</td>
+                  </tr>
+                  <tr>
+                    <td className="font-light tracking-tight border px-4 py-2">
+                      Social events (&gt;50 &lt;85 people max)
+                    </td>
+                    <td className="border px-4 py-2">&gt; 50 &lt; 85</td>
+                    <td className="border px-4 py-2">$100</td>
+                  </tr>
+                  <tr>
+                    <td className="font-light tracking-tight border px-4 py-2">
+                      Events including only CYC members:
+                    </td>
+                    <td className="border px-4 py-2">-</td>
+                    <td className="border px-4 py-2">$0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
           <div className="bg-amber-50 rounded-lg px-6 py-4 mb-6 mt-8">
             <p className="text-lg font-bold mb-1 uppercase underline decoration-amber-500">
               Members are responsible for clean up after their event.
