@@ -7,13 +7,15 @@ import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import cycLogo from "../assets/images/CYC-Logo.svg";
 import Image from "next/image";
+import { NextPage } from "next";
+import { useRouter } from "next/navigation";
 
 type Props = {};
 
 const Nav = (props: Props) => {
-  // const isLoggedIn = false;
   const { data: session } = useSession();
   const isLoggedIn = !!session;
+  const router = useRouter();
 
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
@@ -25,6 +27,12 @@ const Nav = (props: Props) => {
     };
     setProviders();
   }, []);
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      router.push("/");
+    }
+  }, [isLoggedIn, router]);
 
   return (
     <nav className="flex justify-end items-center w-full mb-16 p-4 bg-sky-50/50 border-b">

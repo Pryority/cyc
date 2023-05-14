@@ -1,3 +1,4 @@
+import { withAuth } from "@/components/withAuth";
 import React from "react";
 
 const WorkHoursPage = () => {
@@ -79,4 +80,4 @@ const WorkHoursPage = () => {
   );
 };
 
-export default WorkHoursPage;
+export default withAuth(WorkHoursPage);

@@ -1,3 +1,4 @@
+import { withAuth } from "@/components/withAuth";
 import Link from "next/link";
 import React from "react";
 
@@ -41,4 +42,4 @@ const CYCEmailsPage = () => {
   );
 };
 
-export default CYCEmailsPage;
+export default withAuth(CYCEmailsPage);

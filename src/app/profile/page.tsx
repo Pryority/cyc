@@ -1,13 +1,12 @@
-import { getServerSession } from "next-auth";
 import { useSession } from "next-auth/react";
-import { authOptions } from "@/lib/auth";
+import { withAuth } from "@/components/withAuth";
 import React from "react";
 
 type Props = {};
 
-const ProfilePage = async (props: Props) => {
-  const session = await getServerSession(authOptions);
-  console.log(session);
+const ProfilePage = (props: Props) => {
+  const { data: session } = useSession();
+
   return (
     <section className="flex flex-col w-full items-center">
       <div className="flex flex-col gap-4 w-4/5 items-start">
@@ -40,4 +39,4 @@ const ProfilePage = async (props: Props) => {
   );
 };
 
-export default ProfilePage;
+export default withAuth(ProfilePage);

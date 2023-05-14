@@ -11,10 +11,11 @@ import cycEmails from "../../assets/images/cyc-emails.svg";
 import photoArchive from "../../assets/images/photo-archive.svg";
 import usefulLinks from "../../assets/images/useful-links.svg";
 import committeeList from "../../assets/images/committee-list.svg";
+import { withAuth } from "@/components/withAuth";
 
 type Props = {};
 
-const page = (props: Props) => {
+const DashboardPage = (props: Props) => {
   const data = [
     {
       name: "Mooring Plan",
@@ -79,4 +80,4 @@ const page = (props: Props) => {
   );
 };
 
-export default page;
+export default withAuth(DashboardPage);

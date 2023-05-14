@@ -1,3 +1,4 @@
+import { withAuth } from "@/components/withAuth";
 import React from "react";
 
 function HowToInfoPage() {
@@ -104,4 +105,4 @@ function HowToInfoPage() {
   );
 }
 
-export default HowToInfoPage;
+export default withAuth(HowToInfoPage);

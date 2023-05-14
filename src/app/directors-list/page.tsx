@@ -1,8 +1,9 @@
+import { withAuth } from "@/components/withAuth";
 import React from "react";
 
 type Props = {};
 
-const page = (props: Props) => {
+const DirectorsListPage = (props: Props) => {
   const directors = [
     { name: "Greg Twigg", role: "Commodore" },
     { name: "Thomas Witort", role: "Vice-Commodore" },
@@ -44,4 +45,4 @@ const page = (props: Props) => {
   );
 };
 
-export default page;
+export default withAuth(DirectorsListPage);

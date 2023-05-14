@@ -1,3 +1,4 @@
+import { withAuth } from "@/components/withAuth";
 import React from "react";
 
 const MeetingNotesPage = () => {
@@ -89,4 +90,4 @@ const MeetingNotesPage = () => {
     </section>
   );
 };
-export default MeetingNotesPage;
+export default withAuth(MeetingNotesPage);

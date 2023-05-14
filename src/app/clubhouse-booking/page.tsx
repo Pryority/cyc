@@ -1,3 +1,4 @@
+import { withAuth } from "@/components/withAuth";
 import React from "react";
 
 const ClubhouseBookingPage = () => {
@@ -112,4 +113,4 @@ const ClubhouseBookingPage = () => {
   );
 };
 
-export default ClubhouseBookingPage;
+export default withAuth(ClubhouseBookingPage);

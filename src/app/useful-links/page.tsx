@@ -1,3 +1,4 @@
+import { withAuth } from "@/components/withAuth";
 import React from "react";
 
 const UsefulLinksPage = () => {
@@ -77,4 +78,4 @@ const UsefulLinksPage = () => {
   );
 };
 
-export default UsefulLinksPage;
+export default withAuth(UsefulLinksPage);

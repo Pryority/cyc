@@ -1,3 +1,4 @@
+import { withAuth } from "@/components/withAuth";
 import React from "react";
 
 type Props = {};
@@ -14,4 +15,4 @@ const MooringPlanPage = (props: Props) => {
   );
 };
 
-export default MooringPlanPage;
+export default withAuth(MooringPlanPage);

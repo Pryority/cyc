@@ -1,8 +1,8 @@
 import Nav from "@/components/Nav";
 import "./globals.css";
 import { Inter } from "next/font/google";
-import Provider from "@/components/Provider";
 import { NextAuthProvider } from "./providers";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +23,7 @@ export default function RootLayout({
           <section className="flex flex-col flex-center">
             <Nav />
             {children}
+            <Footer />
           </section>
         </NextAuthProvider>
       </body>
