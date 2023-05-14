@@ -1,6 +1,7 @@
 import DashboardCard from "@/components/DashboardCard";
 import React from "react";
-import mooringPlan from "../../assets/images/mooring-plan.jpeg";
+// import mooringPlan from "../../assets/images/mooring-plan.jpeg";
+import mooringPlan from "../../assets/images/mooring-plan.svg";
 import directorsList from "../../assets/images/directors-list.svg";
 import workHours from "../../assets/images/work-hours.svg";
 import clubhouseBooking from "../../assets/images/clubhouse-booking.svg";
