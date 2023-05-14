@@ -36,39 +36,27 @@ const Nav = (props: Props) => {
         <div className="col-span-2 sm:col-span-3">
           <div className="flex justify-end gap-2">
             {!isLoggedIn && (
-              <button
-                className="bg-cyan-50 border border-blue-300 p-2 px-4 rounded-xl text-cyan-900"
-                onClick={() => signIn()}
-              >
+              <button className="nav-btn" onClick={() => signIn()}>
                 Login
               </button>
             )}
-            <Link
-              href={"/"}
-              className="bg-cyan-50 border border-blue-300 p-2 px-4 rounded-xl text-cyan-900"
-            >
+            <Link href={"/"} className="nav-btn">
               Home
             </Link>
             {isLoggedIn ? (
               <>
-                <Link
-                  href={"/dashboard"}
-                  className="bg-cyan-50 border border-blue-300 p-2 px-4 rounded-xl text-cyan-900"
-                >
+                <Link href={"/dashboard"} className="nav-btn">
                   Dashboard
                 </Link>
 
-                <Link
-                  href={"/profile"}
-                  className="bg-cyan-50 border border-blue-300 p-2 px-4 rounded-xl text-cyan-900"
-                >
+                <Link href={"/profile"} className="nav-btn">
                   My Profile
                 </Link>
 
                 <button
                   type="button"
                   onClick={() => signOut()}
-                  className="bg-cyan-200 border border-blue-300 p-2 px-4 rounded-3xl text-cyan-900"
+                  className="sign-out-btn"
                 >
                   Sign Out
                 </button>
