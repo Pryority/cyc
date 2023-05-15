@@ -1,8 +1,7 @@
 "use client";
-import { useSession } from "next-auth/react";
 
-import React from "react";
-import LoginPage from "../login/page";
+import { useSession } from "next-auth/react";
+import RequireAuth from "@/components/RequireAuth";
 
 const ClubhouseBookingPage = () => {
   const { data: session } = useSession();
@@ -121,18 +120,7 @@ const ClubhouseBookingPage = () => {
         </div>
       </section>
     );
-  return (
-    <section className="flex flex-col w-full items-center min-h-screen">
-      <div className="flex flex-col justify-center w-full gap-4">
-        <div className="flex w-full justify-center">
-          <h2 className="text-4xl tracking-tighter">
-            You must be a member to view this content.
-          </h2>
-        </div>
-        <LoginPage csrfToken={""} />
-      </div>
-    </section>
-  );
+  return <RequireAuth />;
 };
 
 export default ClubhouseBookingPage;

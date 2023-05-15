@@ -1,8 +1,13 @@
-import React from "react";
+"use client";
+
+import RequireAuth from "@/components/RequireAuth";
+import { useSession } from "next-auth/react";
 
 type Props = {};
 
 const DirectorsListPage = (props: Props) => {
+  const { data: session } = useSession();
+
   const directors = [
     { name: "Greg Twigg", role: "Commodore" },
     { name: "Thomas Witort", role: "Vice-Commodore" },
@@ -17,27 +22,31 @@ const DirectorsListPage = (props: Props) => {
     { name: "Ola Swanzey", role: "Club Administrator" },
   ];
 
-  return (
-    <section className="flex flex-col w-full items-center min-h-screen">
-      <div className="flex flex-col gap-4 w-4/5">
-        <div className="border-b-2 border-gray-300 py-2 mb-8">
-          <h2 className="text-4xl tracking-tighter">Directors List</h2>
+  if (session)
+    return (
+      <section className="flex flex-col w-full items-center min-h-screen">
+        <div className="flex flex-col gap-4 w-4/5">
+          <div className="border-b-2 border-gray-300 py-2 mb-8">
+            <h2 className="text-4xl tracking-tighter">Directors List</h2>
+          </div>
+          <div className="flex gap-2 items-center">
+            <h5 className="uppercase">For members use only</h5>
+            <h6>Refer to CYC registry for contact info</h6>
+          </div>
+          <ul className="list-disc list-inside">
+            {directors.map((director) => (
+              <li key={director.name} className="mb-2">
+                <span className="text-blue-600 font-medium">
+                  {director.name}
+                </span>{" "}
+                - {director.role}
+              </li>
+            ))}
+          </ul>
         </div>
-        <div className="flex gap-2 items-center">
-          <h5 className="uppercase">For members use only</h5>
-          <h6>Refer to CYC registry for contact info</h6>
-        </div>
-        <ul className="list-disc list-inside">
-          {directors.map((director) => (
-            <li key={director.name} className="mb-2">
-              <span className="text-blue-600 font-medium">{director.name}</span>{" "}
-              - {director.role}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  );
+      </section>
+    );
+  return <RequireAuth />;
 };
 
 export default DirectorsListPage;
