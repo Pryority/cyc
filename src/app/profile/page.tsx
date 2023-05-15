@@ -1,6 +1,6 @@
 "use client";
 import { useSession } from "next-auth/react";
-import withAuth from "../../../middleware";
+
 import React from "react";
 
 type Props = {};

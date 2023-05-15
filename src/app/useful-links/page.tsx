@@ -1,4 +1,3 @@
-import withAuth from "../../../middleware";
 import React from "react";
 
 const UsefulLinksPage = () => {

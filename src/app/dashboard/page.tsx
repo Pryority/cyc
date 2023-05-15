@@ -11,7 +11,6 @@ import cycEmails from "../../assets/images/cyc-emails.svg";
 import photoArchive from "../../assets/images/photo-archive.svg";
 import usefulLinks from "../../assets/images/useful-links.svg";
 import committeeList from "../../assets/images/committee-list.svg";
-import withAuth from "../../../middleware";
 
 type Props = {};
 
