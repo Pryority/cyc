@@ -28,11 +28,10 @@ const Nav = (props: Props) => {
     setProviders();
   }, []);
 
-  useEffect(() => {
-    if (!isLoggedIn) {
-      router.push("/");
-    }
-  }, [isLoggedIn, router]);
+  const handleSignOut = async () => {
+    await signOut({ redirect: false, callbackUrl: "/login" });
+    window.location.href = "/api/auth/signin";
+  };
 
   return (
     <nav className="flex justify-end items-center w-full mb-16 p-4 bg-sky-50/50 border-b">
@@ -63,7 +62,7 @@ const Nav = (props: Props) => {
 
                 <button
                   type="button"
-                  onClick={() => signOut()}
+                  onClick={() => handleSignOut()}
                   className="sign-out-btn"
                 >
                   Sign Out

@@ -1,11 +1,11 @@
-import { withAuth } from "@/components/withAuth";
+import withAuth from "../../../middleware";
 import React from "react";
 
 type Props = {};
 
 const MooringPlanPage = (props: Props) => {
   return (
-    <section className="flex flex-col w-full items-center">
+    <section className="flex flex-col w-full items-center min-h-screen">
       <div className="flex flex-col gap-4 w-4/5">
         <div className="border-b-2 border-gray-300 py-2 mb-8">
           <h2 className="text-4xl tracking-tighter">Mooring Plan</h2>
@@ -15,4 +15,4 @@ const MooringPlanPage = (props: Props) => {
   );
 };
 
-export default withAuth(MooringPlanPage);
+export default MooringPlanPage;

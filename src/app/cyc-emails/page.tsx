@@ -1,10 +1,10 @@
-import { withAuth } from "@/components/withAuth";
+import withAuth from "../../../middleware";
 import Link from "next/link";
 import React from "react";
 
 const CYCEmailsPage = () => {
   return (
-    <section className="flex flex-col w-full items-center">
+    <section className="flex flex-col w-full items-center min-h-screen">
       <div className="flex flex-col w-4/5 gap-4">
         <div className="border-b-2 border-gray-300 py-2 mb-4">
           <h2 className="text-4xl tracking-tighter">CYC Emails</h2>
@@ -42,4 +42,4 @@ const CYCEmailsPage = () => {
   );
 };
 
-export default withAuth(CYCEmailsPage);
+export default CYCEmailsPage;

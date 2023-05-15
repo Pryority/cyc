@@ -1,5 +1,6 @@
+"use client";
 import { useSession } from "next-auth/react";
-import { withAuth } from "@/components/withAuth";
+import withAuth from "../../../middleware";
 import React from "react";
 
 type Props = {};
@@ -8,7 +9,7 @@ const ProfilePage = (props: Props) => {
   const { data: session } = useSession();
 
   return (
-    <section className="flex flex-col w-full items-center">
+    <section className="flex flex-col w-full items-center min-h-screen">
       <div className="flex flex-col gap-4 w-4/5 items-start">
         <h2 className="text-4xl font-medium tracking-tighter">
           My Profile -{" "}
@@ -39,4 +40,4 @@ const ProfilePage = (props: Props) => {
   );
 };
 
-export default withAuth(ProfilePage);
+export default ProfilePage;

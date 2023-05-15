@@ -1,36 +1,46 @@
-import { GetServerSideProps } from "next";
-import { getSession } from "next-auth/react";
-import { ComponentType } from "react";
+// import { GetServerSideProps } from "next";
+// import { getSession } from "next-auth/react";
+// import { ComponentType } from "react";
 
-interface Props {
-  session: any;
-}
+// interface Props {
+//   session: any;
+// }
 
-export const withAuth = (WrappedComponent: ComponentType<Props>) => {
-  const Wrapper = ({ session, ...props }: Props) => {
-    if (!session) {
-      return null; // or redirect to login page
-    }
+// const NotAuthenticated = () => {
+//   return (
+//     <section className="flex flex-col items-center h-[40vh]">
+//       <div>
+//         You need to be authenticated to access this page. Please log in.
+//       </div>
+//     </section>
+//   );
+// };
 
-    return <WrappedComponent session={session} {...props} />;
-  };
+// export const withAuth = (WrappedComponent: ComponentType<Props>) => {
+//   const Wrapper = ({ session, ...props }: Props) => {
+//     return session ? (
+//       <WrappedComponent session={session} {...props} />
+//     ) : (
+//       <NotAuthenticated />
+//     );
+//   };
 
-  return Wrapper;
-};
+//   return Wrapper;
+// };
 
-export const getServerSideProps: GetServerSideProps = async ({ req }) => {
-  const session = await getSession({ req });
+// export const getServerSideProps: GetServerSideProps = async (context) => {
+//   const session = await getSession(context);
 
-  if (!session) {
-    return {
-      redirect: {
-        destination: "/login",
-        permanent: false,
-      },
-    };
-  }
+//   if (!session) {
+//     return {
+//       redirect: {
+//         destination: "/signin",
+//         permanent: false,
+//       },
+//     };
+//   }
 
-  return {
-    props: { session },
-  };
-};
+//   return {
+//     props: { session },
+//   };
+// };
