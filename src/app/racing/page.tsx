@@ -1,11 +1,11 @@
 "use client";
 
-import Carousel from "../../components/RacePageCarousel";
 import Image from "next/image";
-
 import gbcLogo from "../../../public/assets/images/GBC-Logo.png";
-import CarouselComponent from "../../components/RacePageCarousel";
+import raceCourse from "../../../public/assets/images/2022-race-course.png";
 import RaceCarousel from "../../components/RacePageCarousel";
+
+import { useState } from "react";
 
 const images = [
   {
@@ -32,11 +32,22 @@ const images = [
 ];
 
 const RacingPage = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedImage, setSelectedImage] = useState("");
+
   return (
     <section className="flex flex-col w-full items-center min-h-screen">
       <div className="flex flex-col w-4/5 gap-4">
         <div className="border-b-2 border-gray-300 py-2 mb-4">
-          <h2 className="text-4xl tracking-tighter">Racing</h2>
+          <div className="flex w-full items-center justify-between">
+            <h2 className="text-4xl tracking-tighter">Racing</h2>
+            <button
+              onClick={() => setShowModal(true)}
+              className="secondary-btn"
+            >
+              View Race Courses
+            </button>
+          </div>
         </div>
         <div className="flex justify-around w-full gap-4 items-start">
           <div className="border rounded-lg py-12 px-8 w-[90%]">
@@ -73,6 +84,19 @@ const RacingPage = () => {
         </div>
         <RaceCarousel images={images} />
       </div>
+      {showModal && (
+        <div className="fixed z-50 top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="relative">
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute top-0 right-0 m-4 text-black hover:text-slate-50 bg-red-50 hover:bg-red-500 border-slate-900 hover:border-red-900 transition-colors ease-in-out duration-200"
+            >
+              X
+            </button>
+            <Image src={raceCourse} alt="race course" />
+          </div>
+        </div>
+      )}
     </section>
   );
 };
