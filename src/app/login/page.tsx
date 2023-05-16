@@ -21,7 +21,7 @@ const useCredentials = () => {
   };
 };
 
-const LoginPage = ({ csrfToken }: { csrfToken: string }) => {
+const LoginPage = () => {
   const { email, setEmail, password, setPassword, handleSubmit } =
     useCredentials();
 
@@ -35,12 +35,6 @@ const LoginPage = ({ csrfToken }: { csrfToken: string }) => {
         onSubmit={handleSubmit}
         className="flex flex-col items-center gap-2 w-4/5 sm:w-2/3 md:w-1/2 lg:w-1/4"
       >
-        <input
-          type="hidden"
-          name="csrfToken"
-          defaultValue={csrfToken}
-          className=""
-        />
         <label className="flex flex-col w-full">
           Email
           <input

@@ -12,7 +12,7 @@ const RequireAuth = (props: Props) => {
             You must be a member to view this content.
           </h2>
         </div>
-        <LoginPage csrfToken={""} />
+        <LoginPage />
       </div>
     </section>
   );

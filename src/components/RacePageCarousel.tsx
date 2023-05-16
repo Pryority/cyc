@@ -1,45 +1,70 @@
-"use client";
-
 import Image from "next/image";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { useState } from "react";
 
-const images = [
-  {
-    src: "/assets/images/racing/1.jpeg",
-    alt: "Image 1",
-  },
+type CarouselProps = {
+  images: {
+    src: string;
+    alt: string;
+  }[];
+};
 
-  {
-    src: "/assets/images/racing/3.jpeg",
-    alt: "Image 3",
-  },
-  {
-    src: "/assets/images/racing/4.jpeg",
-    alt: "Image 4",
-  },
-  {
-    src: "/assets/images/racing/5.jpeg",
-    alt: "Image 5",
-  },
-  {
-    src: "/assets/images/racing/6.jpeg",
-    alt: "Image 6",
-  },
-];
+const RaceCarousel = ({ images }: CarouselProps) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-const CarouselComponent = () => {
+  const prevImage = () => {
+    setCurrentImageIndex(
+      currentImageIndex === 0 ? images.length - 1 : currentImageIndex - 1
+    );
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex(
+      currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1
+    );
+  };
+
   return (
-    <div className="flex w-full">
-      <Carousel showThumbs={false} className="flex w-full border-4">
-        {images.map((image) => (
-          <div key={image.src} className="flex w-fit h-screen object-cover ">
-            <Image src={image.src} alt={image.alt} fill />
-          </div>
-        ))}
-      </Carousel>
+    <div className="relative">
+      <div className="flex justify-center h-screen">
+        <button
+          className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black text-white px-4 py-2 rounded-full opacity-50 hover:opacity-100 focus:outline-none"
+          onClick={prevImage}
+        >
+          Prev
+        </button>
+        <button
+          className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-black text-white px-4 py-2 rounded-full opacity-50 hover:opacity-100 focus:outline-none"
+          onClick={nextImage}
+        >
+          Next
+        </button>
+        <Image
+          src={images[currentImageIndex].src}
+          alt={images[currentImageIndex].alt}
+          className="w-full h-full object-cover"
+          fill
+        />
+      </div>
+
+      <div className="absolute right-0 bottom-4 justify-center flex w-full">
+        <div className="flex justify-center mt-2">
+          {images.map((image, index) => (
+            <button
+              key={index}
+              className={`mx-2 ${
+                index === currentImageIndex
+                  ? "bg-amber-400 text-white cursor-default"
+                  : "bg-stone-100 text-black hover:bg-amber-500"
+              } h-12 w-12 relative rounded-2xl text-xl hover:text-white focus:outline-none bg-opacity-90`}
+              onClick={() => setCurrentImageIndex(index)}
+            >
+              <div className="absolute top-2 left-[17px]">{index + 1}</div>
+            </button>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
 
-export default CarouselComponent;
+export default RaceCarousel;
