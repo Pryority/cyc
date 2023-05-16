@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import cycLogo from "../assets/images/CYC-Logo.svg";
+import cycLogo from "../../public/assets/images/CYC-Logo.svg";
 import Image from "next/image";
 
 type Props = {};
@@ -40,6 +40,9 @@ const Nav = (props: Props) => {
           <div className="flex justify-end gap-2">
             <Link href={"/"} className="nav-btn">
               Home
+            </Link>
+            <Link href={"/racing"} className="nav-btn">
+              Racing
             </Link>
             {!session ? (
               <button className="nav-btn" onClick={() => signIn()}>
@@ -132,54 +135,6 @@ const Nav = (props: Props) => {
             </div>
           )}
         </div>
-        {/* ) : (
-          <>
-            <div className="flex flex-col items-end w-full justify-end">
-              <div
-                className="h-6 w-6 outline outline-[0.34px] p-[1.62px] rounded-md"
-                onClick={() => setToggleDropdown(!toggleDropdown)}
-              >
-                {!toggleDropdown ? <Bars3Icon /> : <XMarkIcon />}
-              </div>
-              {toggleDropdown && (
-                <div className="flex flex-col items-end gap-2 py-2">
-                  <button
-                    type="button"
-                    // key={provider.name}
-                    // onClick={() => signIn(provider.id)}
-                    onClick={() => signIn()}
-                    className="bg-cyan-200 mt-3 border border-blue-300 p-2 w-full px-4 rounded-3xl text-cyan-900"
-                  >
-                    Sign In
-                  </button>
-                  <Link
-                    href={"/"}
-                    className="bg-blue-100 border border-sky-200 px-4 py-2 rounded-xl flex w-full justify-center"
-                    onClick={() => setToggleDropdown(false)}
-                  >
-                    Home
-                  </Link>
-
-                  <Link
-                    href={"/"}
-                    className="bg-blue-100 border border-sky-200 px-4 py-2 rounded-xl flex w-full justify-center"
-                    onClick={() => setToggleDropdown(false)}
-                  >
-                    About
-                  </Link>
-
-                  <Link
-                    href={"/"}
-                    className="bg-blue-100 border border-sky-200 px-4 py-2 rounded-xl flex w-full justify-center"
-                    onClick={() => setToggleDropdown(false)}
-                  >
-                    Contact
-                  </Link>
-                </div>
-              )}
-            </div>
-          </>
-        )} */}
       </div>
     </nav>
   );

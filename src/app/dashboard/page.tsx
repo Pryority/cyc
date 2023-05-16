@@ -1,16 +1,16 @@
 "use client";
 
 import DashboardCard from "@/components/DashboardCard";
-import mooringPlan from "../../assets/images/mooring-plan.svg";
-import directorsList from "../../assets/images/directors-list.svg";
-import workHours from "../../assets/images/work-hours.svg";
-import clubhouseBooking from "../../assets/images/clubhouse-booking.svg";
-import howToInfo from "../../assets/images/how-to-info.svg";
-import meetingNotes from "../../assets/images/meeting-notes.svg";
-import cycEmails from "../../assets/images/cyc-emails.svg";
-import photoArchive from "../../assets/images/photo-archive.svg";
-import usefulLinks from "../../assets/images/useful-links.svg";
-import committeeList from "../../assets/images/committee-list.svg";
+import mooringPlan from "../../../public/assets/images/mooring-plan.svg";
+import directorsList from "../../../public/assets/images/directors-list.svg";
+import workHours from "../../../public/assets/images/work-hours.svg";
+import clubhouseBooking from "../../../public/assets/images/clubhouse-booking.svg";
+import howToInfo from "../../../public/assets/images/how-to-info.svg";
+import meetingNotes from "../../../public/assets/images/meeting-notes.svg";
+import cycEmails from "../../../public/assets/images/cyc-emails.svg";
+import photoArchive from "../../../public/assets/images/photo-archive.svg";
+import usefulLinks from "../../../public/assets/images/useful-links.svg";
+import committeeList from "../../../public/assets/images/committee-list.svg";
 import RequireAuth from "@/components/RequireAuth";
 import { useSession } from "next-auth/react";
 
